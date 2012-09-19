@@ -1,7 +1,7 @@
 var Sculptor = {
     construct: function(){
         this.isConstructed = true;
-        this.trigger("construct_complete");
+        this.trigger("sculptor:construct-complete");
         return true;
     },
     _firstRender: function() {
@@ -56,14 +56,14 @@ var Sculptor = {
 
         this._populateView({all: true});
         this.isRendered = true;
-        this.trigger("render_complete");
+        this.trigger("sculptor:render-complete");
         return true;
     },
     _populateView: function(config) {
         var attrs;
         var mb = this._metaBindings;
         if (config && config.all) {
-            attrs = this.attributes();
+            attrs = this.model.attributes;
         } else {
             attrs = this.changedAttributes();
         }
@@ -96,10 +96,9 @@ var Sculptor = {
     _fullReRender: function() {
         return true;
     },
-    _updateRender: function() {
-        return true;
-    },
-    _render: function(config) {
+    render: function(config) {
+        var _this = this;
+        config = config || {};
         if (this.isRendered) {
             return true;
         }
@@ -107,7 +106,11 @@ var Sculptor = {
             if (config.preventConstruction) {
                 return false;
             } else {
-                this.on("construct_complete", _.bind(this.render, this));
+                var fn = function(){
+                    _this.off("sculptor:construct-complete", fn);
+                    _this.render();
+                }
+                this.on("sculptor:construct-complete", fn);
                 this.construct();
                 return false;
             }
@@ -115,13 +118,17 @@ var Sculptor = {
         if (! this.isRendered) {
             return this._firstRender();
         } else if (config.fullReRender) {
-            return this._fullReRender();
+            return this._populateView({all: true});
         } else if (this.model && this.model.hasChanged()) {
             return this._populateView();
         }
+        if (config.autoBind) {
+            _.each(_.keys(this.metaBindings), function(key) {
+                _this.model.on('change:'+key, function(){
+                    _this.populateView();
+                });
+            });
+        }
         return true;
-    },
-    render: function(config) {
-        return this._render(config);
     }
 }
