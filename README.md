@@ -25,9 +25,14 @@ Copyright 2012 Gaurab Paul (@lorefnon)
 
 --------------------------------------------------------------------------------
 
-License : MIT license (http://opensource.org/licenses/mit-license.php) 
+License : 
+---------
+
+MIT license (http://opensource.org/licenses/mit-license.php) 
 
 Dependencies : 
+--------------
+
  - Backbone MVC micro-framework ( http://backbonejs.org/ )
  - jQuery javascript library ( http://jquery.com )
 
