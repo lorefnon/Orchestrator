@@ -59,7 +59,7 @@ such port, feel free to drop me a line, and I will add a reference to your work.
 Current Status : 
 ----------------
 
-Vaporware
+Under development - API changes are the order of the day.
 
 Documentation :
 ---------------
