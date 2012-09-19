@@ -1,18 +1,35 @@
-# README for a newly created project.
+888888ba   .88888.  8888ba.88ba  
+88    `8b d8'   `8b 88  `8b  `8b 
+88     88 88     88 88   88   88 
+88     88 88     88 88   88   88 
+88    .8P Y8.   .8P 88   88   88 
+8888888P   `8888P'  dP   dP   dP 
+                                 
+                                 
+.d88888b                    dP            dP                     
+88.    "'                   88            88                     
+`Y88888b. .d8888b. dP    dP 88 88d888b. d8888P .d8888b. 88d888b. 
+      `8b 88'  `"" 88    88 88 88'  `88   88   88'  `88 88'  `88 
+d8'   .8P 88.  ... 88.  .88 88 88.  .88   88   88.  .88 88       
+ Y88888P  `88888P' `88888P' dP 88Y888P'   dP   `88888P' dP       
+                               88                                
+                               dP                                
 
-There are a couple of things you should do first, before you can use all of Git's power:
+--------------------------------------------------------------------------------
 
-  * Add a remote to this project: in the Cloud9 IDE command line, you can execute the following commands
-    `git remote add [remote name] [remote url (eg. 'git@github.com:/ajaxorg/node_chat')]` [Enter]
-  * Create new files inside your project
-  * Add them to to Git by executing the following command
-    `git add [file1, file2, file3, ...]` [Enter]
-  * Create a commit which can be pushed to the remote you just added
-    `git commit -m 'added new files'` [Enter]
-  * Push the commit the remote
-    `git push [remote name] master` [Enter]
+An extension for Backbone View class to provide enhanced facilities for 
+methodically managing the DOM structure and Data associations between 
+Model and View.
 
-That's it! If this doesn't work for you, please visit the excellent resources from [Github.com](http://help.github.com) and the [Pro Git](http://http://progit.org/book/) book.
-If you can't find your answers there, feel free to ask us via Twitter (@cloud9ide), [mailing list](groups.google.com/group/cloud9-ide) or IRC (#cloud9ide on freenode).
+Copyright 2012 Gaurab Paul (@lorefnon)
 
-Happy coding!
+--------------------------------------------------------------------------------
+
+License : MIT license (http://opensource.org/licenses/mit-license.php) 
+
+Dependencies : 
+ - Backbone MVC micro-framework ( http://backbonejs.org/ )
+ - jQuery javascript library ( http://jquery.com )
+
+--------------------------------------------------------------------------------
+
