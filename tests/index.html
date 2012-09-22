@@ -3,7 +3,7 @@
 <html>
 <head>
   <title>Jasmine Spec Runner</title>
-
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
   <link rel="shortcut icon" type="image/png" href="lib/jasmine-1.2.0/jasmine_favicon.png">
   <link rel="stylesheet" type="text/css" href="lib/jasmine-1.2.0/jasmine.css">
   <script type="text/javascript" src="lib/jasmine-1.2.0/jasmine.js"></script>
@@ -14,8 +14,8 @@
   <script type="text/javascript" src="lib/underscore.js"></script>
   <script type="text/javascript" src="lib/backbone.js"></script>
 
-  <script type="text/javascript" src="../src/dom_sculptor.js"></script>
-  <script type="text/javascript" src="spec/dom_sculptor_spec.js"></script>
+  <script type="text/javascript" src="../src/orchestrator.js"></script>
+  <script type="text/javascript" src="spec/orchestrator_spec.js"></script>
 
 
   <script type="text/javascript">
@@ -50,5 +50,15 @@
 </head>
 
 <body>
+  <div id='about' style="display:none">
+    <div class='name'></div>
+    <div class='occupation'></div>
+  </div>
+  <div id="login_form_wrapper">
+    <form id="login_form">
+      <input type="text" name='username'></input>
+      <textarea name='about'></textarea>
+    </form>
+  </div>
 </body>
 </html>
