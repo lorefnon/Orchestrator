@@ -4,14 +4,14 @@
     <meta charset='utf-8'>
     <meta http-equiv="X-UA-Compatible" content="chrome=1">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-    <link href='https://fonts.googleapis.com/css?family=Architects+Daughter' rel='stylesheet' type='text/css'>
+    <link href='http://fonts.googleapis.com/css?family=Raleway|Bilbo+Swash+Caps' rel='stylesheet' type='text/css'>
     <link rel="stylesheet" type="text/css" href="stylesheets/stylesheet.css" media="screen" />
     <link rel="stylesheet" type="text/css" href="stylesheets/pygment_trac.css" media="screen" />
     <link rel="stylesheet" type="text/css" href="stylesheets/print.css" media="print" />
 
     <!--[if lt IE 9]>
-    <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
-    <![endif]-->
+        <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+        <![endif]-->
 
     <title>Orchestrator by lorefnon</title>
   </head>
@@ -28,49 +28,75 @@
     <div id="content-wrapper">
       <div class="inner clearfix">
         <section id="main-content">
-          <p>An extension for Backbone View class to provide enhanced facilities for
-methodically managing the DOM structure and Data associations between
-Model and View.</p>
+          <hr><h2>Overview :</h2>
+          <p>
+            Orchestrator aims to be a simple extension for Backbone View class which enables you bind model attributes to content, attributes or css-rules for
+            any DOM node. Binding configuration is specified in pure javascript inside View class. No custom attributes / special tags / exotic markup is required
+            in the HTML.
+          </p>
+          <p>
+            Orchestrator does not seek to perform any kind of occult sorcery behind the scenes. While this does mean that everything is pretty much transparent and
+            for cases of advanced configuration debugging is easy, it also means that no claim regarding drastic reduction of code is being made.
+          </p>
+          <p>
+            Orchestrator is agonistic of any templating libraries and has built in support for asynchronous construction of DOM nodes. While basic use-cases can be 
+            fulfilled in very few lines of code, the configuration system is flexible and can accomodate a wide variety of advanced usage scenarios.
+            Asynchronous construction of DOM nodes is supported out of the box, so you can pull in your templates when necessary, create the relevant nodes and once
+            done bind them to the model. Also real-time binding is supported for elements which might be added on-the-fly.
+          </p>
+          <hr><h2>Usage examples :</h2>
+          <!--<h3> Simple binding :</h3>-->
+          <p>
+            Coming Soon ...
+          </p>
+          <hr><h2>Alternatives :</h2>
+          <p>
+            There are other projects which have been tackling the problem of data-binding from a variety of aspects.
+          </p>
+          <p>
+            If your prefer to specify your binding configuration through data-attributes right inside your HTML - <a href="http://knockoutjs.com">Knockout JS</a> is worth a look.
+            An integration layer for using Knockout alongside Backbone is <a href="http://kmalakoff.github.com/knockback/">available</a>. Another similar 5approach that
+            is easy to integrate in any MVC setup is offered by <a href="http://rivetsjs.com">Rivets.js</a> library.
+          </p>
+          <p>
+            <a href="http://angularjs.org">AngularJS</a> by Google takes a much more radical and sophisticated approach towards building client side web-applications. If you do like the concept of
+            supercharging HTML with capabilities beyond its original intent, this is definitely worth a try.
+          </p>
+          <hr>
 
-<p>Copyright 2012 Gaurab Paul (<a href="https://github.com/lorefnon" class="user-mention">@lorefnon</a>)</p>
+          <p>Copyright 2012 Gaurab Paul (<a href="https://github.com/lorefnon" class="user-mention">@lorefnon</a>)</p>
 
-<hr><h2>License :</h2>
+          <hr><h2>License :</h2>
 
-<p>MIT license (<a href="http://opensource.org/licenses/mit-license.php">http://opensource.org/licenses/mit-license.php</a>)</p>
+          <p>MIT license (<a href="http://opensource.org/licenses/mit-license.php">http://opensource.org/licenses/mit-license.php</a>)</p>
 
-<h2>Dependencies :</h2>
+          <h2>Dependencies :</h2>
 
-<ul>
-<li>Backbone MVC micro-framework ( <a href="http://backbonejs.org/">http://backbonejs.org/</a> )</li>
-<li>jQuery javascript library ( <a href="http://jquery.com">http://jquery.com</a> )</li>
-</ul><h2>Contributions :</h2>
+          <ul>
+            <li>Backbone MVC micro-framework ( <a href="http://backbonejs.org/">http://backbonejs.org/</a> )</li>
+            <li>jQuery javascript library ( <a href="http://jquery.com">http://jquery.com</a> )</li>
+          </ul><h2>Contributions :</h2>
 
-<p>You are welcome to contribute to the project if you like the concept. Fork the
-project and once you have made your changes, request for a pull. Please make
-sure that your changes/contributions available under the MIT license. It is
-preferred that your contributions would not introduce large dependencies.
-I plan to keep the codebase tiny, lightweight and maintainable.
-Also for the sake of coherence please follow the same coding style as in
-Backbone source code.</p>
+          <p>You are welcome to contribute to the project if you like the concept. Fork the
+            project and once you have made your changes, request for a pull. Please make
+            sure that your changes/contributions available under the MIT license. It is
+            preferred that your contributions would not introduce large dependencies.
+            I plan to keep the codebase tiny, lightweight and maintainable.
+            Also for the sake of coherence please follow the same coding style as in
+            Backbone source code.</p>
 
-<p>Also apart from code contributions - comments, suggestions and bug-reports
-are welcome too. Please use the Github issue tracker for the same.</p>
+          <p>Also apart from code contributions - comments, suggestions and bug-reports
+            are welcome too. Please use the Github issue tracker for the same.</p>
 
-<p>Although I appreciate feature requests, I can not guarantee at this point how
-soon they will be implemented. Also I can not fullfill requests to re-implement
-the extension for some other DOM manipulation library or some other MV*
-framework. Apologies for the same. If you have been working on creating any
-such port, feel free to drop me a line, and I will add a reference to your work.</p>
+          <h2>Current Status :</h2>
 
-<h2>Current Status :</h2>
+          <p>Under development - API changes are the order of the day.</p>
 
-<p>Under development - API changes are the order of the day.</p>
+          <h2>Documentation :</h2>
 
-<h2>Documentation :</h2>
+          <p>Usage and manual and annotated source code will soon be available.</p>
 
-<p>Usage and manual and annotated source code will soon be available.</p>
-
-<hr>
+          <hr>
         </section>
 
         <aside id="sidebar">
@@ -90,16 +116,16 @@ such port, feel free to drop me a line, and I will add a reference to your work.
       </div>
     </div>
 
-            <script type="text/javascript">
-            var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
-            document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
-          </script>
-          <script type="text/javascript">
-            try {
-              var pageTracker = _gat._getTracker("UA-35021844-1");
-            pageTracker._trackPageview();
-            } catch(err) {}
-          </script>
+    <script type="text/javascript">
+      var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+      document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+    </script>
+    <script type="text/javascript">
+      try {
+      var pageTracker = _gat._getTracker("UA-35021844-1");
+      pageTracker._trackPageview();
+      } catch(err) {}
+    </script>
 
   </body>
 </html>
