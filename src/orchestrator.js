@@ -312,29 +312,50 @@ var Orchestrator = {
         });
     },
 
+    // Populate the view with data from the Model :
+    // To keep this efficient only the model that has been
+    // changed is recomputed.
     _populateView: function(config) {
         var attrs;
         var _this = this;
         var mb = this._metaViewBindings;
         var mi = this._metaIFields;
+
+        // Check for an explicit instruction to render
+        // all attributes
         if (config && config.all) {
             attrs = this.model.attributes;
         } else {
             attrs = this.model.changedAttributes();
         }
+
         _.each(attrs, function(val, attr){
+
             if (! mb[attr]) {
                 return;
             }
+
+            // Iterate over bound elements :
             _.each(mb[attr], function(selectorConfig, selector) {
                 $el = selectorConfig.$el || $(_this.el).find(selector);
+
+                // Iterate over bounded parameters :
                 _.each(selectorConfig, function(paramConfig, param) {
                     if (_.isNull(paramConfig)) {
+
+                        // By default use the model attribute value
                         $el[param](val);
+
                     } else if (_.isFunction(paramConfig)) {
+
+                        // Pass the attribute value through custom
+                        // formatter
                         $el[param](paramConfig(val));
+
                     } else if (_.isObject(paramConfig)) {
                         var options = {};
+
+                        // For nested parameters eg. css, attr:
                         _.each(paramConfig, function(optionConfig,option){
                             if (_.isNull(optionConfig)) {
                                 options[option] = val;
@@ -362,7 +383,11 @@ var Orchestrator = {
     render: function(config) {
         var _this = this;
         config = config || {};
+
+        // Has the DOM for the view element been set up ?
         if (! this.isConstructed) {
+
+            // Check if auto-construction is explicitly forbidden
             if (config.preventConstruction) {
                 return false;
             } else {
@@ -370,16 +395,27 @@ var Orchestrator = {
                     _this.off("sculptor:construct-complete", fn);
                     _this.render();
                 }
+
+                // Render the view once construction is complete
                 this.on("sculptor:construct-complete", fn);
                 this.construct();
                 return false;
             }
         }
+
+        // Has the view already been redered?
         if (! this.isRendered) {
-             return this._firstRender(config);
+
+            // Set up all the required event handlers
+            return this._firstRender(config);
         } else if (config.fullReRender) {
+
+            // Rerender all the attributes irrespective of
+            // whether they have changed or not
             return this._populateView({all: true});
         } else if (this.model && this.model.hasChanged()) {
+
+            // Render only changed attributes
             return this._populateView();
         }
         return true;
