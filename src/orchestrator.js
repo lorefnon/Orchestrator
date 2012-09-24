@@ -72,6 +72,19 @@ var Orchestrator = {
                 _.isArray(config.dependsOn);
         }
 
+        // Analyse two-way bindings :
+        if (this.interactiveBindings) {
+            var ib = this.interactiveBindings;
+            if (_.isArray(ib)) {
+                _.each(ib, function(selector) {
+                    _this._bindInteractive(selector);
+                });
+            } else if (_.isObject(ib)) {
+                _.each(ib, function(config, selector) {
+                    _this._bindInteractive(selector, config);
+                });
+            }
+        }
 
         // Analyse one-way binding specifications
         if (this.viewBindings) {
@@ -130,19 +143,6 @@ var Orchestrator = {
             });
         }
 
-        // Analyse two-way bindings :
-        if (this.interactiveBindings) {
-            var ib = this.interactiveBindings;
-            if (_.isArray(ib)) {
-                _.each(ib, function(selector) {
-                    _this._bindInteractive(selector);
-                });
-            } else if (_.isObject(ib)) {
-                _.each(ib, function(config, selector) {
-                    _this._bindInteractive(selector, config);
-                });
-            }
-        }
 
         // Automatically update the DOM upon every model change.
         // If autoBind is not specified DOM is not updated untill explicitly
