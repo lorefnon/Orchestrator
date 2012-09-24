@@ -266,12 +266,16 @@ var Orchestrator = {
         mb[attrName] = mb[attrName] || {};
         var selector = "[name='"+ name +"']"
         var fn = null;
+        var bConfig = attrName;
         if (config.getFieldValue) {
-            fn = config.getFieldValue
+            bConfig = {
+                fn: config.getFieldValue,
+                dependsOn: [attrName]
+            };
         }
         mb[selector] = {
             $el: $el,
-            attr: { value : fn }
+            attr: { value : bConfig }
         }
     },
 
