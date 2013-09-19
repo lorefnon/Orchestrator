@@ -1,3 +1,9 @@
+This library is **NOT MAINTAINED** anymore. Please use [Epoxy.js](http://epoxyjs.org/), [Rivets.js](http://rivetsjs.com/) or any of the several other alternatives 
+available.
+
+
+---
+
 <pre>
    ___          _               _             _
   /___\_ __ ___| |__   ___  ___| |_ _ __ __ _| |_ ___  _ __
